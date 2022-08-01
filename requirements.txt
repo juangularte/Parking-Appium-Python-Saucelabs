@@ -1,0 +1,11 @@
+Appium-Python-Client
+pytest
+selenium
+pytest-rerunfailures
+allure-pytest
+behave
+allure-behave
+pytest-xdist
+pytest-randomly
+pytest-parametrized
+requests

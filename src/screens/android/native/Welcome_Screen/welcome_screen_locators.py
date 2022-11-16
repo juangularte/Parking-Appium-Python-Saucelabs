@@ -16,3 +16,5 @@ class WelcomeScreenLocators():
     location_permission_warning = (AppiumBy.ID, "com.spplus.parking.develop:id/locationAwareTextView")
     lets_park_button = (AppiumBy.ID, "com.spplus.parking.develop:id/letsParkButton")
     powered_by = (AppiumBy.XPATH, "//android.widget.TextView[@text='Powered by']")
+
+    

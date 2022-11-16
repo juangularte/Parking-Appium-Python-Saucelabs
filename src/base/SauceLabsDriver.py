@@ -26,6 +26,7 @@ class InitSession:
             saucelabs_android_caps['sauce:options']['accessKey'] = sauce_access_key
             # caps['sauce:options']['build'] = '<your build id>'
             saucelabs_android_caps['sauce:options']['name'] = executionName
+            saucelabs_android_caps['sauce:options']['tags'] = ["tag1", "tag2", "tag3"]
 
             driver = webdriver.Remote(saucelabs_url, saucelabs_android_caps)
         

@@ -11,10 +11,10 @@ class TestAndroidNative():
     
     @pytest.mark.parametrize("platform, version, deviceName, app", 
     [
-        ("Android", "12", "Google Pixel 6 GoogleAPI Emulator", "storage:filename=app-uat-release.apk"),
-        ("Android", "11", "Samsung Galaxy S20 WQHD GoogleAPI Emulator", "storage:filename=app-uat-release.apk")
+        ("Android", "12", "Google Pixel 6 GoogleAPI Emulator", "storage:filename=storage:filename=app-qa-release.apk"),
+        ("Android", "11", "Samsung Galaxy S20 WQHD GoogleAPI Emulator", "storage:filename=storage:filename=app-qa-release.apk")
     ])
-    @pytest.mark.SLAndroidNative
+    @pytest.mark.SLAndroidNative1
     # @pytest.mark.usefixtures("init_driver")
     def test_methodOne(self, platform, version, deviceName, app):
         log = cl.customLogger()
@@ -27,7 +27,7 @@ class TestAndroidNative():
         # text = driver.find_element(AppiumBy.XPATH, "//android.widget.TextView[1]").text
         assert elementLocated == "Easily book daily and monthly parking when you need it."
 
-        welcome.Welcome_screen_basic_assertions()
+        welcome.Assert_texts_and_navigate_to_dashboard_screen()
         cl.allureLogs("Welcome screen texts were correctly asserted.")
 
         log.info("Assertion passed.")
@@ -40,7 +40,7 @@ class TestAndroidNative():
         ("Android", "12", "Google Pixel 6 GoogleAPI Emulator", "storage:filename=app-uat-release.apk"),
         ("Android", "11", "Samsung Galaxy S20 WQHD GoogleAPI Emulator", "storage:filename=app-uat-release.apk")
     ])
-    @pytest.mark.SLAndroidNative
+    @pytest.mark.SLAndroidNative2
     # @pytest.mark.usefixtures("init_driver")
     def test_methodTwo(self, platform, version, deviceName, app):
         log = cl.customLogger()
@@ -49,7 +49,7 @@ class TestAndroidNative():
         welcome = WelcomeScreenActions(driver)
 
         try:
-            welcome.Welcome_screen_basic_assertions()
+            welcome.Go_to_dashboard_screen()
             assert 1+1 == 3
             driver.execute_script('sauce:job-result=passed')
             driver.quit()
